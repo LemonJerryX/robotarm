@@ -25,18 +25,25 @@
 
 On dispose de trois cubes (A, B et C), d'une table (espace infini) et d'un bras robotisé programmable. Le but est de passer de l'état initial (a) à l'état final (b) tel que représenté dans la figure ci-dessus.
 
-![](https://s2.loli.net/2023/04/05/glYaRPOFWxD7AGe.png)
+![](https://s2.loli.net/2023/04/06/WuOqaHelKA1yFgD.png)
 
 Tous les états du système peuvent être décrits avec les prédicats suivants :
 
-LIBRE(X) : Exprime le fait que le cube X est libre, c'est-à-dire qu'il n'y a pas d'autre cube au-dessus, ni qu'il est saisi par le bras robotisé, etc. (¬LIBRE(X) exprime le contraire de LIBRE(X)).
-TENU(X) : Exprime le fait que le bras robotisé saisit le cube X (X dans le bras robotisé).
-SUR(X,Y) : Exprime le fait que le cube X est sur le cube Y (exemple SUR(C,A)).
-SURTABLE(X) : Exprime le fait que le cube X est sur la table.
-BRASVIDE : Exprime le fait que le bras robotisé est libre (¬BRASVIDE exprime le contraire de BRASVIDE).
+- LIBRE(X) : Exprime le fait que le cube X est libre, c'est-à-dire qu'il n'y a pas d'autre cube au-dessus, ni qu'il est saisi par le bras robotisé, etc. (¬LIBRE(X) exprime le contraire de LIBRE(X)).
+
+- TENU(X) : Exprime le fait que le bras robotisé saisit le cube X (X dans le bras robotisé).
+
+- SUR(X,Y) : Exprime le fait que le cube X est sur le cube Y (exemple SUR(C,A)).
+
+- SURTABLE(X) : Exprime le fait que le cube X est sur la table.
+
+- BRASVIDE : Exprime le fait que le bras robotisé est libre (¬BRASVIDE exprime le contraire de BRASVIDE).
+
+  
+
 Voici une description informelle (pseudo-langage) de ces 4 règles de production R1, R2, R3 et R4 :
 
-R1 : Si le bras robotisé est libre (vide) et que le cube X est libre et sur la table, alors le robot va saisir le cube X et mettre à jour l'état du système à la suite de cette action.
-R2 : Si le bras robotisé est libre et qu'un cube X est sur un cube Y et que le cube X est libre, alors le robot va saisir le cube X et mettre à jour l'état du système à la suite de cette action.
-R3 : Si le robot tient le cube X, alors poser X sur la table et mettre à jour l'état du système pour exprimer l'action de poser le cube X sur la table et les conséquences sur l'état du système.
-R4 : Si le robot tient le cube X et que le cube Y est libre, alors poser le cube X sur le cube Y et mettre à jour l'état du système pour exprimer que le cube X est sur le cube Y et les conséquences sur l'état du système.
+- R1 : Si le bras robotisé est libre (vide) et que le cube X est libre et sur la table, alors le robot va saisir le cube X et mettre à jour l'état du système à la suite de cette action.
+- R2 : Si le bras robotisé est libre et qu'un cube X est sur un cube Y et que le cube X est libre, alors le robot va saisir le cube X et mettre à jour l'état du système à la suite de cette action.
+- R3 : Si le robot tient le cube X, alors poser X sur la table et mettre à jour l'état du système pour exprimer l'action de poser le cube X sur la table et les conséquences sur l'état du système.
+- R4 : Si le robot tient le cube X et que le cube Y est libre, alors poser le cube X sur le cube Y et mettre à jour l'état du système pour exprimer que le cube X est sur le cube Y et les conséquences sur l'état du système.
